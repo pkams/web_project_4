@@ -316,6 +316,7 @@
 
     .profile__name{
         font-size: 22px;
+        max-width: 200px;
     }
 
     .profile__job{
