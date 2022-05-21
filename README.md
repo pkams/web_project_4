@@ -1,16 +1,18 @@
-# Project 4: Around The U.S.
+# Projeto 4 do Bootcamp Web Dev da Yandex by Practicum
+## Projeto 4: Around The U.S.
 
-### Overview
+- Site de página única feito utilizando HTML + CSS + Javascript para estudos do módulo de Javascript básico.
+- Neste módulo o objetivo é utilizar javascript para interações básicas de modificação de página, utilizando conceitos de programação javascript para edição de árvore DOM e manipulação das classes CSS.
+- O objetivo do projeto neste sprint é modificação do conteúdo que aparece em tela, sem objetivar persistência após fechamento ou atualização da página.
+- A página foi desenvolvida para responsividade em telas de >=1280px, 768px e 320px.
+- O resultado pode ser visto em: https://pkams.github.io/web_project_4/
 
-* Figma
-* Images
+### Ajustes e melhorias
 
-**Figma**
+O projeto ainda está em desenvolvimento e o próximo sprint adicionará mais funcionalidades.
+Algumas das possíveis modificações futuras incluem:
 
-* [Link to the project in Figma](https://www.figma.com/file/SurN1jaeEQIhuZEDMhmWWf/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
+- [ ] Incorporar ações e interatividade utilizando Javascript.
+- [ ] Backend utilizando JS ou outra tecnologia similar (Python por ex, utilizando Flask ou Django)
+- [ ] Deploy do site interativo em cloud (AWS/Heroku/Etc)
 
-**Images**
-
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-
-Have fun with JavaScript!
