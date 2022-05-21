@@ -67,6 +67,10 @@
     margin-left: 18px;
 }
 
+.profile__edit-button:hover{
+    opacity: 0.6;
+}
+
 .profile__explore {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -137,6 +141,10 @@
     overflow: hidden;
 }
 
+.card__like-button:hover{
+    opacity: 0.5;
+}
+
 .footer{
     max-width: 880px;
     align-items: start;
@@ -193,6 +201,10 @@
     right: -40px;
 }
 
+.popup__close:hover{
+    opacity: 0.6;
+}
+
 .popup__title{
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -237,6 +249,10 @@
     align-self: center;
 
     color: #FFFFFF;
+}
+
+.popup__save-button:hover{
+    opacity: 0.8;
 }
 
 .popup__container_popup_opened{
