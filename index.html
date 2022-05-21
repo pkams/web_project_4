@@ -6,11 +6,25 @@
     <link rel="stylesheet" href="normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main class="main_page">
+        <section class="popup">
+            <div class="popup__background popup__container_popup_opened">
+            </div>
+
+            <div class="popup__container popup__container_popup_opened">
+                <img src="images/Close%20Icon.svg" class="popup__close">
+                <h2 class="popup__title">Editar perfil</h2>
+                <form class="popup__form">
+                  <input type="text" id="name" name="name" class="popup__form-input" placeholder="Nome">
+                  <input type="text" id="job" name="job" class="popup__form-input" placeholder="Sobre mim">
+                </form>
+                <button class="popup__save-button">Salvar</button>
+            </div>
+        </section>
         <header class="header">
             <img class="header__logo" src="images/logo.svg">
         </header>
@@ -26,16 +40,52 @@
             <img class="profile__add-button" src="images/Add%20Button.svg">
         </section>
         <section class="elements">
-            <div class="elements__card">
-                <img>
+            <div class="card">
+                <img class="card__image" src="images/1.jpg">
+                <div class="card__bottom">
+                    <p class="card__text-title">Vale de Yosemite</p>
+                    <img class="card__like-button" src="images/Like%20Button.svg">
+                </div>
             </div>
-            <div class="elements__card"></div>
-            <div class="elements__card"></div>
-            <div class="elements__card"></div>
-            <div class="elements__card"></div>
-            <div class="elements__card"></div>
+            <div class="card">
+                <img class="card__image" src="images/2.png">
+                <div class="card__bottom">
+                    <p class="card__text-title">Lago Louise</p>
+                    <img class="card__like-button" src="images/Like%20Button.svg">
+                </div>
+            </div>
+            <div class="card">
+                <img class="card__image" src="images/3.png">
+                <div class="card__bottom">
+                    <p class="card__text-title">Montanhas Careeeeeee</p>
+                    <img class="card__like-button" src="images/Like%20Button.svg">
+                </div>
+            </div>
+            <div class="card">
+                <img class="card__image" src="images/4.png">
+                <div class="card__bottom">
+                    <p class="card__text-title">Latemar</p>
+                    <img class="card__like-button" src="images/Like%20Button.svg">
+                </div>
+            </div>
+            <div class="card">
+                <img class="card__image" src="images/5.png">
+                <div class="card__bottom">
+                    <p class="card__text-title">Vanoise National Park</p>
+                    <img class="card__like-button" src="images/Like%20Button.svg">
+                </div>
+            </div>
+            <div class="card">
+                <img class="card__image" src="images/6.png">
+                <div class="card__bottom">
+                    <p class="card__text-title">Lago di Braies</p>
+                    <img class="card__like-button" src="images/Like%20Button.svg">
+                </div>
+            </div>
         </section>
-        <footer class="footer"></footer>
+        <footer class="footer">
+            <p class="footer__text">© 2021 Around The U.S.</p>
+        </footer>
     </main>
 </body>
 </html>
