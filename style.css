@@ -90,6 +90,10 @@
     font-size: 35px;
 }
 
+.profile__add-button:hover{
+    opacity: 0.6;
+}
+
 .elements{
     max-width: 880px;
     display: flex;
