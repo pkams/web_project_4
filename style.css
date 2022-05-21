@@ -71,7 +71,7 @@
     opacity: 0.6;
 }
 
-.profile__explore {
+.profile__job {
     margin: 0;
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -80,6 +80,7 @@
     line-height: 22px;
     /* identical to box height */
     color: #FFF;
+    max-width: 300px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -317,7 +318,7 @@
         font-size: 22px;
     }
 
-    .profile__explore{
+    .profile__job{
         font-size: 14px;
     }
 
