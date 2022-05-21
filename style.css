@@ -197,9 +197,12 @@
 .popup__close{
     position: absolute;
     z-index: 3;
-    width: 35px;
     top: -40px;
     right: -40px;
+}
+
+.popup__close img{
+    width: 35px;
 }
 
 .popup__close:hover{
@@ -331,5 +334,20 @@
 
     .footer__text{
         margin: 0 19px;
+    }
+
+    .popup__container{
+        max-width: 212px;
+    }
+    .popup__save-button{
+        width: 238px;
+    }
+
+    .popup__close{
+        right: 0;
+    }
+
+    .popup__close img{
+        width: 26px;
     }
 }
