@@ -7,7 +7,7 @@ let submit_button = document.querySelector('.popup__save-button')
 
 function editButton(event){
     event.preventDefault();
-    popup.classList.remove('popup__container_popup_opened')
+    popup.classList.remove('popup_opened')
 
     // Load information from profile to form
     let name = document.querySelector('#name')
@@ -20,7 +20,7 @@ function editButton(event){
 
 function closeButton(event){
     event.preventDefault();
-    popup.classList.add('popup__container_popup_opened')
+    popup.classList.add('popup_opened')
 }
 
 function submitButton(event){
