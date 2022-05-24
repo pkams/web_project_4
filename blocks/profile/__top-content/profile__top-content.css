@@ -1,5 +1,5 @@
 .profile__top-content {
     display: flex;
-    align-items: center;
-    margin-bottom: 16px;
+    align-items: baseline;
+    margin: 0 0 14px;
 }

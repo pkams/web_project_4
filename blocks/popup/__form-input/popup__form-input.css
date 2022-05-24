@@ -9,3 +9,10 @@
     color: #000000;
     padding-bottom: 13.26px;
 }
+
+@media screen and (max-width: 640px){
+
+    .popup__form-input{
+        padding-bottom: 9px;
+    }
+}

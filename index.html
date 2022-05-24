@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,21 @@
     <link rel="stylesheet" href="pages/index.css">
 </head>
 <body>
-    <main class="main-page">
+    <div class="main-page">
+        <header class="header">
+            <img class="header__logo" src="images/logo.svg" alt="Logo do site Around the U.S.">
+        </header>
+        <section class="profile">
+            <img class="profile__avatar" src="images/perfil.jpg" alt="Foto de avatar de Jacques Cousteau">
+            <div class="profile__info">
+                <div class="profile__top-content">
+                    <h1 class="profile__name">Jacques Cousteau</h1>
+                    <img class="profile__edit-button" src="images/Edit%20Button.svg" alt="Simbolo de edição">
+                </div>
+                <p class="profile__job">Explorador</p>
+            </div>
+            <button class="profile__add-button">+</button>
+        </section>
         <section class="popup popup_opened" >
             <div class="popup__background">
             </div>
@@ -27,21 +41,8 @@
                 <button class="popup__save-button">Salvar</button>
             </div>
         </section>
-        <header class="header">
-            <img class="header__logo" src="images/logo.svg" alt="Logo do site Around the U.S.">
-        </header>
-        <section class="profile">
-            <img class="profile__avatar" src="images/perfil.jpg" alt="Foto de avatar de Jacques Cousteau">
-            <div class="profile__info">
-                <div class="profile__top-content">
-                    <h1 class="profile__name">Jacques Cousteau</h1>
-                    <img class="profile__edit-button" src="images/Edit%20Button.svg" alt="Simbolo de edição">
-                </div>
-                <p class="profile__job">Explorador</p>
-            </div>
-            <button class="profile__add-button">+</button>
-        </section>
-        <section class="elements">
+        <main>
+            <div class="elements">
             <div class="card">
                 <img class="card__image" src="images/1.jpg" alt="Foto de um rio em Vale de Yosemite">
                 <div class="card__bottom">
@@ -84,11 +85,12 @@
                     <img class="card__like-button" src="images/Like%20Button.svg" alt="Um coração que representa o simbolo de like">
                 </div>
             </div>
-        </section>
+            </div>
+        </main>
         <footer class="footer">
             <p class="footer__text">© 2021 Around The U.S.</p>
         </footer>
-    </main>
+    </div>
 <script src="scripts/script.js"></script>
 </body>
 </html>

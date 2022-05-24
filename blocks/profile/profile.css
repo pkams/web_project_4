@@ -1,5 +1,5 @@
 .profile{
-    margin: 40px auto 50px;
+    margin: 40px auto 50px; /* Se possível verificar se necessita mudança neste parametro, está igual ao Figma para 1280px, só muda no 320px. */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,8 +19,7 @@
     .profile{
         display: flex;
         flex-direction: column;
-        row-gap: 30px;
-        margin: 40px 19px 50px;
+        margin: 42px 19px 36px;
         width: 100%;
     }
 }

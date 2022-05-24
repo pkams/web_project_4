@@ -4,3 +4,10 @@
     gap: 30px;
     margin-bottom: 48px;
 }
+
+@media screen and (max-width: 640px){
+
+    .popup__form{
+        margin-bottom: 46px;
+    }
+}
