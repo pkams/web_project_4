@@ -7,3 +7,9 @@
     justify-content: center;
     margin-bottom: 67px;
 }
+
+@media screen and (max-width: 640px) {
+    .elements{
+    margin-bottom: 50px;
+    }
+}
