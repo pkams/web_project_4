@@ -41,6 +41,21 @@
                   <button class="popup__save-button">Salvar</button>
                </div>
             </section>
+            <section class="popup popup_add-card popup_opened" >
+               <div class="popup__background">
+               </div>
+               <div class="popup__container">
+                  <a class="popup__close">
+                  <img src="images/Close%20Icon.svg" alt="Simbolo de fechar janela.">
+                  </a>
+                  <h2 class="popup__title">Novo Local</h2>
+                  <form class="popup__form">
+                     <input type="text" id="title" name="name" class="popup__form-input" placeholder="Titulo">
+                     <input type="text" id="image-url" name="job" class="popup__form-input" placeholder="Link da imagem">
+                  </form>
+                  <button class="popup__save-button">Salvar</button>
+               </div>
+            </section>
             <div class="elements">
                <div class="card">
                   <img class="card__image" src="images/1.jpg" alt="Foto de um rio em Vale de Yosemite">
@@ -90,6 +105,15 @@
             <p class="footer__text">© 2021 Around The U.S.</p>
          </footer>
       </div>
+      <template class="card-template">
+         <div class="card">
+            <img class="card__image" src="images/1.jpg" alt="Template">
+            <div class="card__bottom">
+               <p class="card__text-title">Vale de Yosemite</p>
+               <img class="card__like-button" src="images/Like%20Button.svg" alt="Um coração que representa o simbolo de like">
+            </div>
+         </div>
+      </template>
       <script src="scripts/script.js"></script>
    </body>
 </html>

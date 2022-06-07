@@ -1,9 +1,38 @@
 // Popup actions
 let edit_button = document.querySelector('.profile__edit-button')
-let close_button = document.querySelector('.popup__close')
+let add_button = document.querySelector('.profile__add-button')
 let popup = document.querySelector('.popup')
-
+let popup_add_card = document.querySelector('.popup_add-card')
+let close_button =  popup.querySelector('.popup__close')
+let close_button_add_card =  popup_add_card.querySelector('.popup__close')
 let submit_button = document.querySelector('.popup__save-button')
+
+const initialCards = [
+  {
+    name: "Vale de Yosemite",
+    link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
+  },
+  {
+    name: "Lago Louise",
+    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg"
+  },
+  {
+    name: "Montanhas Carecas",
+    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg"
+  },
+  {
+    name: "Latemar",
+    link: "https://code.s3.yandex.net/web-code/latemar.jpg"
+  },
+  {
+    name: "Parque Nacional da Vanoise ",
+    link: "https://code.s3.yandex.net/web-code/vanoise.jpg"
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://code.s3.yandex.net/web-code/lago.jpg"
+  }
+];
 
 function editButton(event){
     event.preventDefault();
@@ -18,8 +47,12 @@ function editButton(event){
     job.value = profile_job.innerText
 }
 
-function closeButton(event){
+function addButton(event){
     event.preventDefault();
+    popup_add_card.classList.remove('popup_opened')
+}
+
+function closeButton(popup){
     popup.classList.add('popup_opened')
 }
 
@@ -38,5 +71,7 @@ function submitButton(event){
 }
 
 edit_button.addEventListener('click', editButton)
-close_button.addEventListener('click', closeButton)
+add_button.addEventListener('click', addButton)
+close_button.addEventListener('click', function(){closeButton(popup);})
+close_button_add_card.addEventListener('click', function(){closeButton(popup_add_card);})
 submit_button.addEventListener('click', submitButton)
