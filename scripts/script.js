@@ -1,4 +1,3 @@
-// Popup actions
 let edit_button = document.querySelector('.profile__edit-button')
 let add_button = document.querySelector('.profile__add-button')
 let popup = document.querySelector('.popup')
@@ -8,6 +7,10 @@ let close_button_add_card =  popup_add_card.querySelector('.popup__close')
 let submit_button = document.querySelector('.popup__save-button')
 
 const initialCards = [
+    /*{
+    name: "TESTE",
+    link: "https://code.s3.yandex.net/web-code/lago.jpg"
+  },*/
   {
     name: "Vale de Yosemite",
     link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
@@ -70,8 +73,42 @@ function submitButton(event){
     profile_job.innerText = job.value
 }
 
+function likeButton(event){
+    event.preventDefault()
+    if (this.classList.contains('card__like-button_clicked')) {
+    this.src = 'images/Like%20Button%20Clicked.svg';
+    this.classList.toggle('card__like-button_clicked')
+  } else {
+    this.classList.toggle('card__like-button_clicked')
+    this.src = "images/Like%20Button.svg";
+  }
+}
+
+// Event listeners
 edit_button.addEventListener('click', editButton)
 add_button.addEventListener('click', addButton)
 close_button.addEventListener('click', function(){closeButton(popup);})
 close_button_add_card.addEventListener('click', function(){closeButton(popup_add_card);})
 submit_button.addEventListener('click', submitButton)
+
+
+// Add Cards
+// 1. Get Element Container
+// 2. Copy cardtemplate content
+let elementContainer = document.querySelector('.elements')
+let cardTemplate = document.querySelector("#card-template").content;
+
+// 3. Clone card element and associate new values based on the array elements
+// 4. Finally append the new element to the container
+initialCards.slice(0, 6).forEach(function(element, index){
+    const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
+    cardElement.querySelector(".card__text-title").textContent = element['name'];
+    cardElement.querySelector(".card__image").src = element['link'];
+    elementContainer.append(cardElement)
+})
+
+// Like button
+let likes_button = document.querySelectorAll('.card__like-button')
+likes_button.forEach(item => {
+  item.addEventListener('click', likeButton)
+})
