@@ -75,13 +75,7 @@ function submitButton(event){
 
 function likeButton(event){
     event.preventDefault()
-    if (this.classList.contains('card__like-button_clicked')) {
-    this.src = 'images/Like%20Button%20Clicked.svg';
     this.classList.toggle('card__like-button_clicked')
-  } else {
-    this.classList.toggle('card__like-button_clicked')
-    this.src = "images/Like%20Button.svg";
-  }
 }
 
 // Event listeners
