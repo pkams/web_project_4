@@ -2,8 +2,10 @@ let edit_button = document.querySelector('.profile__edit-button')
 let add_button = document.querySelector('.profile__add-button')
 let popup = document.querySelector('.popup')
 let popup_add_card = document.querySelector('.popup_add-card')
+let popup_view_image = document.querySelector('.popup_view-image')
 let close_button =  popup.querySelector('.popup__close')
 let close_button_add_card =  popup_add_card.querySelector('.popup__close')
+let close_button_view_image =  popup_view_image.querySelector('.popup__close_view-image')
 let submit_button = document.querySelector('.popup__save-button')
 let submit_button_add_card = document.querySelector('.popup__add-card-save-button')
 
@@ -89,6 +91,7 @@ function submitButtonAddCard(event){
     })
 
     resetElementsState()
+    resetImage()
 }
 
 function likeButton(event){
@@ -103,12 +106,20 @@ function deleteButton(i){
     resetElementsState()
 }
 
+function viewImage(i){
+    let popup_image = document.querySelector('.popup__image')
+    let popup_image_name = document.querySelector('.popup__image-name')
+    popup_image.src = initialCards[i]['link']
+    popup_image_name.textContent = initialCards[i]['name']
+    popup_view_image.classList.toggle('popup_opened')
+}
+
 function resetElementsState(){
     // Reset elementContainer
     elementContainer.innerHTML = '';
 
     // Update the elements in the elementContainer
-    initialCards.slice(0, initialCards.length).forEach(function(element, index){
+    initialCards.slice(0, 6).forEach(function(element, index){
     const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
     cardElement.querySelector(".card__text-title").textContent = element['name'];
     cardElement.querySelector(".card__image").src = element['link'];
@@ -119,6 +130,16 @@ function resetElementsState(){
     trashs_button.forEach((item, i) => {
     item.addEventListener('click', function(){deleteButton(i)})
     })
+
+    console.log(initialCards)
+}
+
+function resetImage(){
+    // View image
+    let card_buttons = document.querySelectorAll('.card__image')
+    card_buttons.forEach((item, i) => {
+        item.addEventListener('click', function(){viewImage(i)})
+    })
 }
 
 // Event listeners
@@ -126,6 +147,7 @@ edit_button.addEventListener('click', editButton)
 add_button.addEventListener('click', addButton)
 close_button.addEventListener('click', function(){closeButton(popup);})
 close_button_add_card.addEventListener('click', function(){closeButton(popup_add_card);})
+close_button_view_image.addEventListener('click', function(){closeButton(popup_view_image );})
 submit_button.addEventListener('click', submitButton)
 submit_button_add_card.addEventListener('click', submitButtonAddCard)
 
@@ -146,13 +168,19 @@ initialCards.slice(0, 6).forEach(function(element, index){
 })
 
 // Like button
-let likes_button = document.querySelectorAll('.card__like-button')
-likes_button.forEach(item => {
+let like_buttons = document.querySelectorAll('.card__like-button')
+like_buttons.forEach(item => {
   item.addEventListener('click', likeButton)
 })
 
 // Trash button
-let trashs_button = document.querySelectorAll('.card__trash-button')
-trashs_button.forEach((item, i) => {
+let trash_buttons = document.querySelectorAll('.card__trash-button')
+trash_buttons.forEach((item, i) => {
     item.addEventListener('click', function(){deleteButton(i)})
+})
+
+// View image
+let card_buttons = document.querySelectorAll('.card__image')
+card_buttons.forEach((item, i) => {
+    item.addEventListener('click', function(){viewImage(i)})
 })
