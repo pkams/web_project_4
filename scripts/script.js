@@ -65,9 +65,9 @@ function addButton(event){
 }
 
 function closeButton(popup){
-    popup_opened.style.transition = 'visibility 0.5s, opacity 0.5s linear';
-    popup_add_card_opened.style.transition = 'visibility 0.5s, opacity 0.5s linear';
-    popup_view_image_opened.style.transition = 'visibility 0.5s, opacity 0.5s linear';
+    popup_opened.style.transition = 'visibility 0.3s, opacity 0.3s linear';
+    popup_add_card_opened.style.transition = 'visibility 0.3s, opacity 0.3s linear';
+    popup_view_image_opened.style.transition = 'visibility 0.3s, opacity 0.3s linear';
     popup_opened.style.visibility = 'hidden'
     popup_opened.style.opacity = '0'
     popup_add_card_opened.style.visibility = 'hidden'
@@ -94,17 +94,22 @@ function submitButtonAddCard(event){
     event.preventDefault()
 
     // Get forms and profile variables
-    let title = document.querySelector('#title')
-    let image_url = document.querySelector('#image-url')
+    const title = document.querySelector('#title')
+    const image_url = document.querySelector('#image-url')
 
-    // Switch actual profile information for the new information
-    initialCards.unshift({
-    name: title.value,
-    link: image_url.value
-    })
+    if ((title.value.length === 0) && (image_url.value.length === 0)){
+        alert('Por favor, digite valores para Titulo e Link!')
+    }
+    else{
+        // Switch actual profile information for the new information
+        initialCards.unshift({
+        name: title.value,
+        link: image_url.value
+        })
 
-    resetElementsState()
-    resetImage()
+        resetElementsState()
+        resetImage()
+    }
 }
 
 function likeButton(event){
@@ -131,29 +136,34 @@ function viewImage(i){
     //popup_view_image.classList.toggle('popup_opened')
 }
 
-function resetElementsState(){
-    // Reset elementContainer
-    elementContainer.innerHTML = '';
-
-    // Update the elements in the elementContainer
+function updateCards(){
     initialCards.slice(0, 6).forEach(function(element, index){
     const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
     cardElement.querySelector(".card__text-title").textContent = element['name'];
     cardElement.querySelector(".card__image").src = element['link'];
-    elementContainer.append(cardElement)})
+    elementContainer.append(cardElement)
+})
+}
 
-    // Rerun the for to assign the function to the trash elements again
-    let trashs_button = document.querySelectorAll('.card__trash-button')
+function updateTrashs(){
+    const trashs_button = document.querySelectorAll('.card__trash-button')
     trashs_button.forEach((item, i) => {
     item.addEventListener('click', function(){deleteButton(i)})
     })
+}
 
-    console.log(initialCards)
+function resetElementsState(){
+    // Reset elementContainer
+    elementContainer.innerHTML = '';
+    // Update the elements in the elementContainer
+    updateCards()
+    // Rerun the for to assign the function to the trash elements again
+    updateTrashs()
 }
 
 function resetImage(){
     // View image
-    let card_buttons = document.querySelectorAll('.card__image')
+    const card_buttons = document.querySelectorAll('.card__image')
     card_buttons.forEach((item, i) => {
         item.addEventListener('click', function(){viewImage(i)})
     })
@@ -170,19 +180,10 @@ submit_button_add_card.addEventListener('click', submitButtonAddCard)
 
 
 // Add Cards
-// 1. Get Element Container
-// 2. Copy cardtemplate content
 let elementContainer = document.querySelector('.elements')
 let cardTemplate = document.querySelector("#card-template").content;
+updateCards()
 
-// 3. Clone card element and associate new values based on the array elements
-// 4. Finally append the new element to the container
-initialCards.slice(0, 6).forEach(function(element, index){
-    const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
-    cardElement.querySelector(".card__text-title").textContent = element['name'];
-    cardElement.querySelector(".card__image").src = element['link'];
-    elementContainer.append(cardElement)
-})
 
 // Like button
 let like_buttons = document.querySelectorAll('.card__like-button')
