@@ -17,6 +17,6 @@
 @media screen and (max-width: 640px) {
     .elements{
         margin-bottom: 50px;
-        justify-content: center
+        justify-content: center;
     }
 }
