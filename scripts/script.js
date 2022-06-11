@@ -12,7 +12,7 @@ const close_button_view_image =  popup_view_image.querySelector('.popup__close_v
 const submit_button = document.querySelector('.popup__save-button');
 const submit_button_add_card = document.querySelector('.popup__add-card-save-button');
 let elementContainer = document.querySelector('.elements');
-let cardTemplate = document.querySelector("#card-template").content;
+const cardTemplate = document.querySelector("#card-template").content;
 
 let initialCards = [
   {
@@ -50,8 +50,8 @@ function editButton(event){
     // Load information from profile to form
     let name = document.querySelector('#name');
     let job = document.querySelector('#job');
-    let profile_name = document.querySelector('.profile__name');
-    let profile_job = document.querySelector('.profile__job');
+    const profile_name = document.querySelector('.profile__name');
+    const profile_job = document.querySelector('.profile__job');
     name.value = profile_name.innerText;
     job.value = profile_job.innerText;
 }
@@ -78,8 +78,8 @@ function submitButton(event){
     event.preventDefault();
 
     // Get forms and profile variables
-    let name = document.querySelector('#name');
-    let job = document.querySelector('#job');
+    const name = document.querySelector('#name');
+    const job = document.querySelector('#job');
     let profile_name = document.querySelector('.profile__name');
     let profile_job = document.querySelector('.profile__job');
 
@@ -155,7 +155,7 @@ function resetImage(){
 }
 
 function resetLikeButton() {
-    let like_buttons = document.querySelectorAll('.card__like-button');
+    const like_buttons = document.querySelectorAll('.card__like-button');
     like_buttons.forEach(item => {
         item.addEventListener('click', likeButton);
     });
