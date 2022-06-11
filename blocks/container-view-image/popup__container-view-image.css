@@ -1,4 +1,4 @@
-.popup__container_view-image{
+.popup__container-view-image{
     position: fixed;
     z-index: 2;
     margin: auto;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 640px){
-    .popup__container{
+    .popup__container-view-image{
         top: calc(50% - 20px);
     }
 }
