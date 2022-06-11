@@ -1,14 +1,16 @@
-let edit_button = document.querySelector('.profile__edit-button')
-let add_button = document.querySelector('.profile__add-button')
-let popup = document.querySelector('.popup')
-let popup_add_card = document.querySelector('.popup_add-card')
-let popup_view_image = document.querySelector('.popup_view-image')
-let close_button =  popup.querySelector('.popup__close')
-let close_button_add_card =  popup_add_card.querySelector('.popup__close')
-let close_button_view_image =  popup_view_image.querySelector('.popup__close_view-image')
-let submit_button = document.querySelector('.popup__save-button')
-let submit_button_add_card = document.querySelector('.popup__add-card-save-button')
-
+const edit_button = document.querySelector('.profile__edit-button')
+const add_button = document.querySelector('.profile__add-button')
+const popup = document.querySelector('.popup')
+const popup_add_card = document.querySelector('.popup__add-card')
+const popup_view_image = document.querySelector('.popup__view-image')
+const popup_opened = document.querySelector('.popup_opened')
+const popup_add_card_opened = document.querySelector('.popup__add-card_opened')
+const popup_view_image_opened = document.querySelector('.popup__view-image_opened')
+const close_button =  popup.querySelector('.popup__close')
+const close_button_add_card =  popup_add_card.querySelector('.popup__close')
+const close_button_view_image =  popup_view_image.querySelector('.popup__close_view-image')
+const submit_button = document.querySelector('.popup__save-button')
+const submit_button_add_card = document.querySelector('.popup__add-card-save-button')
 
 let initialCards = [
     /*{
@@ -43,7 +45,9 @@ let initialCards = [
 
 function editButton(event){
     event.preventDefault();
-    popup.classList.remove('popup_opened')
+    popup_opened.style.visibility = 'visible'
+    popup_opened.style.opacity = '1'
+
 
     // Load information from profile to form
     let name = document.querySelector('#name')
@@ -56,11 +60,20 @@ function editButton(event){
 
 function addButton(event){
     event.preventDefault();
-    popup_add_card.classList.remove('popup_opened');
+    popup_add_card_opened.style.visibility = 'visible'
+    popup_add_card_opened.style.opacity = '1';
 }
 
 function closeButton(popup){
-    popup.classList.add('popup_opened')
+    popup_opened.style.transition = 'visibility 0.5s, opacity 0.5s linear';
+    popup_add_card_opened.style.transition = 'visibility 0.5s, opacity 0.5s linear';
+    popup_view_image_opened.style.transition = 'visibility 0.5s, opacity 0.5s linear';
+    popup_opened.style.visibility = 'hidden'
+    popup_opened.style.opacity = '0'
+    popup_add_card_opened.style.visibility = 'hidden'
+    popup_add_card_opened.style.opacity = '0';
+    popup_view_image_opened.style.visibility = 'hidden'
+    popup_view_image_opened.style.opacity = '0';
 }
 
 function submitButton(event){
@@ -104,14 +117,18 @@ function deleteButton(i){
     initialCards.splice(i, 1)
 
     resetElementsState()
+    resetImage()
 }
 
 function viewImage(i){
+    popup_view_image_opened.style.visibility = 'visible'
+    popup_view_image_opened.style.opacity = '1'
+
     let popup_image = document.querySelector('.popup__image')
     let popup_image_name = document.querySelector('.popup__image-name')
     popup_image.src = initialCards[i]['link']
     popup_image_name.textContent = initialCards[i]['name']
-    popup_view_image.classList.toggle('popup_opened')
+    //popup_view_image.classList.toggle('popup_opened')
 }
 
 function resetElementsState(){
