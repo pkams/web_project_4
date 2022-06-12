@@ -3,7 +3,6 @@ const add_button = document.querySelector('.profile__add-button');
 const popup = document.querySelector('.popup');
 const popup_add_card = document.querySelector('.popup_add-card');
 const popup_view_image = document.querySelector('.popup_view-image');
-const popup_opened = document.querySelector('.popup_opened');
 const close_button =  popup.querySelector('.popup__close');
 const close_button_add_card =  popup_add_card.querySelector('.popup__close');
 const close_button_view_image =  popup_view_image.querySelector('.popup__close_view-image');
@@ -41,7 +40,7 @@ let initialCards = [
 
 function openEditionForm(event){
     event.preventDefault();
-    popup.classList.toggle('popup_opened')
+    popup.classList.toggle('popup_opened');
     // Load information from profile to form
     let name = document.querySelector('#name');
     let job = document.querySelector('#job');
@@ -53,7 +52,7 @@ function openEditionForm(event){
 
 function addCardButton(event){
     event.preventDefault();
-    popup_add_card.classList.toggle('popup_opened')
+    popup_add_card.classList.toggle('popup_opened');
 }
 
 function closePopupButton(popup){
