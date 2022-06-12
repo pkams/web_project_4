@@ -4,5 +4,5 @@
 }
 
 .card__image:hover{
-    cursor: grab;
+    cursor: pointer;
 }
