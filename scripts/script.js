@@ -89,7 +89,8 @@ function submitButtonAddCard(event){
         name: title.value,
         link: image_url.value
         });
-
+        title.value = ''
+        image_url.value = ''
         resetElementsState();
     }
 }
