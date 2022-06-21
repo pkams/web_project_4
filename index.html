@@ -35,10 +35,14 @@
                   </a>
                   <h2 class="popup__title">Editar perfil</h2>
                   <form class="popup__form">
-                     <input type="text" id="name" name="name" class="popup__form-input" placeholder="Nome">
-                     <input type="text" id="job" name="job" class="popup__form-input" placeholder="Sobre mim">
+                     <input type="text" id="name" name="name" class="popup__form-input" placeholder="Nome" required
+                minlength="2" maxlength="20">
+                     <span class="popup__form-error name-error"></span>
+                     <input type="text" id="job" name="job" class="popup__form-input" placeholder="Sobre mim" required minlength="2" maxlength="200">
+                     <span class="popup__form-error job-error"></span>
+                     <button class="popup__save-button">Salvar</button>
                   </form>
-                  <button class="popup__save-button">Salvar</button>
+
                </div>
             </section>
             <section class="popup popup_add-card" >
@@ -85,5 +89,6 @@
          </div>
       </template>
       <script src="scripts/script.js"></script>
+      <script src="scripts/validate.js"></script>
    </body>
 </html>
