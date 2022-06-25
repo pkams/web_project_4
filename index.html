@@ -40,7 +40,7 @@
                      <span class="popup__form-error name-error"></span>
                      <input type="text" id="job" name="job" class="popup__form-input" placeholder="Sobre mim" required minlength="2" maxlength="200">
                      <span class="popup__form-error job-error"></span>
-                     <button class="popup__save-button">Salvar</button>
+                     <button class="popup__save-button popup__save-button_inactive">Salvar</button>
                   </form>
 
                </div>
@@ -54,10 +54,13 @@
                   </a>
                   <h2 class="popup__title">Novo Local</h2>
                   <form class="popup__form">
-                     <input type="text" id="title" name="title" class="popup__form-input" placeholder="Titulo">
-                     <input type="text" id="image-url" name="image-url" class="popup__form-input" placeholder="Link da imagem">
+                     <input type="text" id="title" name="title" class="popup__form-input" placeholder="Titulo" required minlength="2" maxlength="30">
+                     <span class="popup__form-error title-error"></span>
+                     <input type="url" id="image-url" name="image-url" class="popup__form-input" placeholder="Link da imagem" required>
+                     <span class="popup__form-error image-url-error"></span>
+                     <button class="popup__save-button popup__add-card-save-button popup__save-button_inactive">Salvar</button>
                   </form>
-                  <button class="popup__save-button popup__add-card-save-button">Salvar</button>
+
                </div>
             </section>
             <div class="popup popup_view-image">
@@ -88,7 +91,7 @@
             <img class="card__trash-button" src="images/Trash.svg">
          </div>
       </template>
-      <script src="scripts/script.js"></script>
-      <script src="scripts/validate.js"></script>
+      <script type="module" src="scripts/script.js"></script>
+      <script type="module" src="scripts/validate.js"></script>
    </body>
 </html>

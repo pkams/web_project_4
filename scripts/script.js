@@ -1,3 +1,6 @@
+import {enableValidation} from "./validate.js";
+import {resetValidation} from "./validate.js";
+
 const edit_button = document.querySelector('.profile__edit-button');
 const add_button = document.querySelector('.profile__add-button');
 const popup = document.querySelector('.popup');
@@ -10,6 +13,7 @@ const submit_button = document.querySelector('.popup__save-button');
 const submit_button_add_card = document.querySelector('.popup__add-card-save-button');
 let elementContainer = document.querySelector('.elements');
 const cardTemplate = document.querySelector("#card-template").content;
+const background_list = document.querySelectorAll(".popup__background")
 
 let initialCards = [
   {
@@ -41,6 +45,7 @@ let initialCards = [
 function openEditionForm(event){
     event.preventDefault();
     popup.classList.toggle('popup_opened');
+    enableValidation();
     // Load information from profile to form
     let name = document.querySelector('#name');
     let job = document.querySelector('#job');
@@ -52,11 +57,13 @@ function openEditionForm(event){
 
 function addCardButton(event){
     event.preventDefault();
+    enableValidation()
     popup_add_card.classList.toggle('popup_opened');
 }
 
 function closePopupButton(popup){
-    popup.classList.toggle('popup_opened');
+    popup.classList.remove('popup_opened');
+    resetValidation()
 }
 
 function updateProfileInformation(event){
@@ -165,6 +172,16 @@ close_button_add_card.addEventListener('click', function(){closePopupButton(popu
 close_button_view_image.addEventListener('click', function(){closePopupButton(popup_view_image );});
 submit_button.addEventListener('click', updateProfileInformation);
 submit_button_add_card.addEventListener('click', submitButtonAddCard);
+
+// Close popups when clicking in the background
+background_list.forEach((background) => {
+    background.addEventListener("click", function(){closePopupButton(background.parentElement);})
+    document.addEventListener("keydown", function escHandler(evt) {
+      if (evt.key === "Escape") {
+        closePopupButton(background.parentElement);
+      }
+})
+})
 
 
 // Add Cards and start interactive elements when starting

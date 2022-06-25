@@ -64,16 +64,32 @@ const setEventListeners = (formElement) => {
   });
 };
 
-function enableValidation(){
+export function enableValidation(){
   let formList = Array.from(document.querySelectorAll(".popup__form"));
 
   formList.forEach((formElement) => {
-  formElement.addEventListener("submit", (evt) => {
-    evt.preventDefault();
+    formElement.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+    });
+      setEventListeners(formElement);
   });
+}
 
-    setEventListeners(formElement);
-});
+export function resetValidation(){
+  let formList = Array.from(document.querySelectorAll(".popup__form"));
+
+  formList.forEach((formElement) => {
+    const inputList = Array.from(formElement.querySelectorAll(".popup__form-input"));
+    const buttonElement = formElement.querySelector(".popup__save-button");
+    inputList.forEach((inputElement) => {
+      const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+      inputElement.classList.remove("popup__form-input_type_error");
+      errorElement.classList.remove("popup__form-input_error_active");
+      errorElement.textContent = "";
+      buttonElement.classList.add("popup__save-button_inactive");
+      //checkInputValidity(formElement, inputElement);
+    });
+  });
 
 }
 
