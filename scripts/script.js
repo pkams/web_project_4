@@ -9,7 +9,7 @@ const form_obj = {
   inactiveButtonClass: "popup__save-button_inactive",
   inputErrorClass: "popup__form-input_type_error",
   errorClass: "popup__form-input_error_active"
-}
+};
 
 const edit_button = document.querySelector('.profile__edit-button');
 const add_button = document.querySelector('.profile__add-button');
@@ -23,7 +23,7 @@ const submit_button = document.querySelector('.popup__save-button');
 const submit_button_add_card = document.querySelector('.popup__add-card-save-button');
 let elementContainer = document.querySelector('.elements');
 const cardTemplate = document.querySelector("#card-template").content;
-const background_list = document.querySelectorAll(".popup__background")
+const background_list = document.querySelectorAll(".popup__background");
 
 let initialCards = [
   {
@@ -67,13 +67,13 @@ function openEditionForm(event){
 
 function addCardButton(event){
     event.preventDefault();
-    enableValidation(form_obj)
+    enableValidation(form_obj);
     popup_add_card.classList.toggle('popup_opened');
 }
 
 function closePopupButton(popup){
     popup.classList.remove('popup_opened');
-    resetValidation(form_obj)
+    resetValidation(form_obj);
 }
 
 function updateProfileInformation(event){
@@ -102,8 +102,8 @@ function submitButtonAddCard(event){
     name: title.value,
     link: image_url.value
     });
-    title.value = ''
-    image_url.value = ''
+    title.value = '';
+    image_url.value = '';
     resetElementsState();
 }
 
@@ -180,13 +180,13 @@ submit_button_add_card.addEventListener('click', submitButtonAddCard);
 
 // Close popups when clicking in the background
 background_list.forEach((background) => {
-    background.addEventListener("click", function(){closePopupButton(background.parentElement);})
+    background.addEventListener("click", function(){closePopupButton(background.parentElement);});
     document.addEventListener("keydown", function escHandler(evt) {
       if (evt.key === "Escape") {
         closePopupButton(background.parentElement);
       }
-})
-})
+});
+});
 
 
 // Add Cards and start interactive elements when starting
