@@ -1,9 +1,17 @@
 .popup__form-error{
-    margin-bottom: 30px;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 15px;
     color: #FF0000;
+    display: inline;
+    height: 30px;
+}
+
+@media screen and (max-width: 640px){
+
+    .popup__form-error{
+        font-size: 8px;
+    }
 }
