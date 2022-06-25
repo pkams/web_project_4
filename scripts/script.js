@@ -97,19 +97,14 @@ function submitButtonAddCard(event){
     const title = document.querySelector('#title');
     const image_url = document.querySelector('#image-url');
 
-    if ((title.value.length === 0) && (image_url.value.length === 0)){
-        alert('Por favor, digite valores para Titulo e Link!');
-    }
-    else{
-        // Switch actual profile information for the new information
-        initialCards.unshift({
-        name: title.value,
-        link: image_url.value
-        });
-        title.value = ''
-        image_url.value = ''
-        resetElementsState();
-    }
+    // Switch actual profile information for the new information
+    initialCards.unshift({
+    name: title.value,
+    link: image_url.value
+    });
+    title.value = ''
+    image_url.value = ''
+    resetElementsState();
 }
 
 function likeCardButton(event){
