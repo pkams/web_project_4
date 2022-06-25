@@ -68,7 +68,6 @@ export function resetValidation(form_obj) {
       errorElement.classList.remove(form_obj.errorClass);
       errorElement.textContent = "";
       buttonElement.classList.add(form_obj.inactiveButtonClass);
-      //checkInputValidity(formElement, inputElement);
     });
   });
 
