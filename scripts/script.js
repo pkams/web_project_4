@@ -1,6 +1,16 @@
 import {enableValidation} from "./validate.js";
 import {resetValidation} from "./validate.js";
 
+// Configuration object
+const form_obj = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__form-input",
+  submitButtonSelector: ".popup__save-button",
+  inactiveButtonClass: "popup__save-button_inactive",
+  inputErrorClass: "popup__form-input_type_error",
+  errorClass: "popup__form-input_error_active"
+}
+
 const edit_button = document.querySelector('.profile__edit-button');
 const add_button = document.querySelector('.profile__add-button');
 const popup = document.querySelector('.popup');
@@ -45,7 +55,7 @@ let initialCards = [
 function openEditionForm(event){
     event.preventDefault();
     popup.classList.toggle('popup_opened');
-    enableValidation();
+    enableValidation(form_obj);
     // Load information from profile to form
     let name = document.querySelector('#name');
     let job = document.querySelector('#job');
@@ -57,13 +67,13 @@ function openEditionForm(event){
 
 function addCardButton(event){
     event.preventDefault();
-    enableValidation()
+    enableValidation(form_obj)
     popup_add_card.classList.toggle('popup_opened');
 }
 
 function closePopupButton(popup){
     popup.classList.remove('popup_opened');
-    resetValidation()
+    resetValidation(form_obj)
 }
 
 function updateProfileInformation(event){
