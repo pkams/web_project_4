@@ -104,6 +104,7 @@ function submitButtonAddCard(event){
     });
     title.value = '';
     imageUrl.value = '';
+    resetValidation(formObj);
     resetElementsState();
 }
 
