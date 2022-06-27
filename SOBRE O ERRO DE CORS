@@ -1,0 +1,13 @@
+Os arquivos estão rodando normalmente utilizando a IDE na função live-server.
+Também esta rodando normalmente no github pages: https://pkams.github.io/web_project_4/
+
+O próprio link listado como referencia no projeto 6 (na parte de importação de scripts) salienta sobre o possível erro de CORS:
+Link: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Modules
+Informação: "Se você tentar carregar o arquivo HTML localmente (i.e. com um arquivo:// URL), você encontrará erros do CORS devido a requisitos de segurança do módulo JavaScript. Você precisa fazer seus testes através de um servidor. As páginas do GitHub são ideais, pois também servem arquivos .js com o tipo MIME correto."
+
+Segue outros links que comentam essa mesma situação:
+- https://stackoverflow.com/questions/63873280/importing-script-with-type-module-from-local-folder-causes-a-cors-issue
+- https://forum.freecodecamp.org/t/cors-blocked-when-i-use-type-module/340229/10
+
+Se possível verificar essa situação, obrigado!
+
