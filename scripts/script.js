@@ -2,7 +2,7 @@ import {enableValidation} from "./validate.js";
 import {resetValidation} from "./validate.js";
 
 // Configuration object
-const formObj = {
+const validateSelectors = {
   formSelector: ".popup__form",
   inputSelector: ".popup__form-input",
   submitButtonSelector: ".popup__save-button",
@@ -21,11 +21,11 @@ const closeButtonAddCard =  popupAddCard.querySelector('.popup__close');
 const closeButtonViewImage =  popupViewImage.querySelector('.popup__close_view-image');
 const submitButton = document.querySelector('.popup__save-button');
 const submitAddCard = document.querySelector('.popup__add-card-save-button');
-let elementContainer = document.querySelector('.elements');
+const elementContainer = document.querySelector('.elements');
 const cardTemplate = document.querySelector("#card-template").content;
 const backgroundList = document.querySelectorAll(".popup__background");
 
-let initialCards = [
+const initialCards = [
   {
     name: "Vale de Yosemite",
     link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
@@ -55,10 +55,10 @@ let initialCards = [
 function openEditionForm(event){
     event.preventDefault();
     popup.classList.toggle('popup_opened');
-    enableValidation(formObj);
+    enableValidation(validateSelectors);
     // Load information from profile to form
-    let name = document.querySelector('#name');
-    let job = document.querySelector('#job');
+    const name = document.querySelector('#name');
+    const job = document.querySelector('#job');
     const profileName = document.querySelector('.profile__name');
     const profileJob = document.querySelector('.profile__job');
     name.value = profileName.innerText;
@@ -67,13 +67,13 @@ function openEditionForm(event){
 
 function addCardButton(event){
     event.preventDefault();
-    enableValidation(formObj);
+    enableValidation(validateSelectors);
     popupAddCard.classList.toggle('popup_opened');
 }
 
 function closePopupButton(popup){
     popup.classList.remove('popup_opened');
-    resetValidation(formObj);
+    resetValidation(validateSelectors);
 }
 
 function updateProfileInformation(event){
@@ -82,8 +82,8 @@ function updateProfileInformation(event){
     // Get forms and profile variables
     const name = document.querySelector('#name');
     const job = document.querySelector('#job');
-    let profileName = document.querySelector('.profile__name');
-    let profileJob = document.querySelector('.profile__job');
+    const profileName = document.querySelector('.profile__name');
+    const profileJob = document.querySelector('.profile__job');
 
     // Switch actual profile information for the new information
     profileName.innerText = name.value;
@@ -104,7 +104,7 @@ function submitButtonAddCard(event){
     });
     title.value = '';
     imageUrl.value = '';
-    resetValidation(formObj);
+    resetValidation(validateSelectors);
     resetElementsState();
 }
 
@@ -122,8 +122,8 @@ function deleteCardButton(index){
 function openImage(index){
     popupViewImage.classList.toggle('popup_opened');
 
-    let popupImage = document.querySelector('.popup__image');
-    let popupImageName = document.querySelector('.popup__image-name');
+    const popupImage = document.querySelector('.popup__image');
+    const popupImageName = document.querySelector('.popup__image-name');
     popupImage.src = initialCards[index].link;
     popupImageName.textContent = initialCards[index].name;
 }

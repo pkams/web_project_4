@@ -26,7 +26,7 @@ const hasInvalidInput = (inputList) => {
   });
 };
 
-const toggleButtonState = (form_obj, inputList, buttonElement) => {
+const toggleSubmitButtonState = (form_obj, inputList, buttonElement) => {
   if (hasInvalidInput(inputList)) {
     buttonElement.classList.add(form_obj.inactiveButtonClass);
   } else {
@@ -40,13 +40,13 @@ const setEventListeners = (form_obj, formElement) => {
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {
       checkInputValidity(form_obj, formElement, inputElement);
-      toggleButtonState(form_obj, inputList, buttonElement);
+      toggleSubmitButtonState(form_obj, inputList, buttonElement);
     });
   });
 };
 
 export function enableValidation(form_obj){
-  let formList = Array.from(document.querySelectorAll(form_obj.formSelector));
+  const formList = Array.from(document.querySelectorAll(form_obj.formSelector));
 
   formList.forEach((formElement) => {
     formElement.addEventListener("submit", (evt) => {
@@ -57,7 +57,7 @@ export function enableValidation(form_obj){
 }
 
 export function resetValidation(form_obj) {
-  let formList = Array.from(document.querySelectorAll(form_obj.formSelector));
+  const formList = Array.from(document.querySelectorAll(form_obj.formSelector));
 
   formList.forEach((formElement) => {
     const inputList = Array.from(formElement.querySelectorAll(form_obj.inputSelector));
@@ -68,6 +68,7 @@ export function resetValidation(form_obj) {
       errorElement.classList.remove(form_obj.errorClass);
       errorElement.textContent = "";
       buttonElement.classList.add(form_obj.inactiveButtonClass);
+      inputElement.value = ""
     });
   });
 
