@@ -1,12 +1,13 @@
 # Projeto: Around The U.S do Bootcamp Web Dev da Yandex by Practicum
 
-Site de página única feito utilizando **HTML + CSS + Javascript** para estudos do módulo de **Javascript básico**.
+Site de página única feito utilizando **HTML + CSS + Javascript** para estudos dos módulos de **Javascript (básico até avançado)**.
 
-Até o momento, o projeto foi dividido em 4 etapas:
+O projeto foi construído visando a implementação de features de forma incremental a fim de estudar as tecnologias aprendidas em cada módulo do curso.
+
 - Etapa 1: O objetivo foi utilizar **javascript** para **interações básicas de modificação de página**, utilizando conceitos de programação javascript para **edição de árvore DOM** e **manipulação das classes CSS**.
 - Etapa 2: Foi inserido mais interações adicionando **estruturas mais complexas como funções, condições, lações de repetição e manipulação de vetores**.
 - Etapa 3: Foi adicionada a **verificação de validação dos formulários** assim como alguns **eventos de pressionamento de botões**. 
-- Etapa 4: O código foi modularizado, a fim de implementar as funções referentes a criação de Card e FormValidator utilizando conceitos de OOP e JS Modular.
+- Etapa 4: O código foi **modularizado**, buscando-se implementar as funções referentes a criação de Card e FormValidator utilizando **conceitos de OOP e JS Modular**.
 - O objetivo do projeto nos sprints foi a modificação do conteúdo que aparece em tela, **sem objetivar persistência** após fechamento ou atualização da página.
 - A página foi desenvolvida para responsividade em telas de >=1280px, 768px e 320px.
 - O resultado pode ser visto em: https://pkams.github.io/web_project_4/
