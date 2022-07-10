@@ -1,12 +1,12 @@
 import {initialCards, updateCardsList} from "./index.js";
-import {popupViewImage} from "./utils.js"
+import {popupViewImage} from "./utils.js";
 
 export class Card{
     constructor(name, link, cardSelector, index) {
-        this.name = name
-        this.link = link
+        this.name = name;
+        this.link = link;
         this._cardSelector = cardSelector;
-        this.index = index
+        this.index = index;
     }
 
     _getTemplate() {
@@ -20,7 +20,7 @@ export class Card{
     _buildCardElement() {
         this.cardElement.querySelector(".card__text-title").textContent = this.name;
         this.cardElement.querySelector(".card__image").src = this.link;
-        return this.cardElement
+        return this.cardElement;
     }
 
     _likeCardButton(){
@@ -33,7 +33,7 @@ export class Card{
         updateCardsList();
     }
 
-    _openImage(link, name){
+    _openImage(){
         popupViewImage.classList.toggle('popup_opened');
         const popupImage = document.querySelector('.popup__image');
         const popupImageName = document.querySelector('.popup__image-name');
@@ -52,9 +52,9 @@ export class Card{
     }
 
     generateCard(){
-        this.cardElement = this._getTemplate()
-        this.cardElement = this._buildCardElement()
-        this._setEventListener()
-        return this.cardElement
+        this.cardElement = this._getTemplate();
+        this.cardElement = this._buildCardElement();
+        this._setEventListener();
+        return this.cardElement;
     }
 }

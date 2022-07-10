@@ -39,9 +39,9 @@ export const initialCards = [
 const elementContainer = document.querySelector('.elements');
 
 export function updateCardsList(){
-    elementContainer.innerHTML = ""
+    elementContainer.innerHTML = "";
     initialCards.slice(0, 6).forEach(function(element, index){
-    const cardElement = new Card(element.name, element.link, '#card-template', index).generateCard()
+    const cardElement = new Card(element.name, element.link, '#card-template', index).generateCard();
     elementContainer.append(cardElement);
 });
 }
@@ -58,7 +58,7 @@ export function resetValidation(form_obj) {
       errorElement.classList.remove(form_obj.errorClass);
       errorElement.textContent = "";
       buttonElement.classList.add(form_obj.inactiveButtonClass);
-      inputElement.value = ""
+      inputElement.value = "";
     });
   });
 }
@@ -70,10 +70,10 @@ export function enableValidation(form_obj){
     formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
-    const formValidation = new FormValidator(validateSelectors, formElement)
-    formValidation.enableValidation()
+    const formValidation = new FormValidator(validateSelectors, formElement);
+    formValidation.enableValidation();
   });
 }
 
-enableValidation(validateSelectors)
-updateCardsList()
+enableValidation(validateSelectors);
+updateCardsList();

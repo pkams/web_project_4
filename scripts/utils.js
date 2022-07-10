@@ -60,7 +60,7 @@ function submitButtonAddCard(event){
     title.value = '';
     imageUrl.value = '';
     resetValidation(validateSelectors);
-    updateCardsList()
+    updateCardsList();
 }
 
 function closePopupButton(popup){
