@@ -1,5 +1,6 @@
 import {FormValidator} from "./FormValidator.js";
-import {Card} from "./Card.js"
+import {Card} from "./Card.js";
+import "./utils.js";
 
 export const validateSelectors = {
   formSelector: ".popup__form",
@@ -61,7 +62,6 @@ export function resetValidation(form_obj) {
     });
   });
 }
-
 
 export function enableValidation(form_obj){
   const formList = Array.from(document.querySelectorAll(form_obj.formSelector));
