@@ -1,7 +1,7 @@
-import {initialCards, updateCardsList} from "./index.js";
-import {popupViewImage} from "./utils.js";
+import { initialCards, updateCardsList } from "./index.js";
+import { popupViewImage } from "./utils.js";
 
-export class Card{
+export default class Card{
     constructor(name, link, cardSelector, index) {
         this.name = name;
         this.link = link;
@@ -46,7 +46,7 @@ export class Card{
         const likeButton = this.cardElement.querySelector('.card__like-button');
         const cardButton = this.cardElement.querySelector('.card__image');
 
-        trashButton.addEventListener('click', this._deleteCardButton);
+        trashButton.addEventListener('click', this._deleteCardButton.bind(this));
         likeButton.addEventListener('click', this._likeCardButton);
         cardButton.addEventListener('click', this._openImage.bind(this));
     }

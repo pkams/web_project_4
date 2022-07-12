@@ -1,6 +1,5 @@
-import {FormValidator} from "./FormValidator.js";
-import {Card} from "./Card.js";
-import "./utils.js";
+import FormValidator from "./FormValidator.js";
+import Card from "./Card.js";
 
 export const validateSelectors = {
   formSelector: ".popup__form",
@@ -41,8 +40,8 @@ const elementContainer = document.querySelector('.elements');
 export function updateCardsList(){
     elementContainer.innerHTML = "";
     initialCards.slice(0, 6).forEach(function(element, index){
-    const cardElement = new Card(element.name, element.link, '#card-template', index).generateCard();
-    elementContainer.append(cardElement);
+      const cardElement = new Card(element.name, element.link, '#card-template', index).generateCard();
+      elementContainer.append(cardElement);
 });
 }
 
