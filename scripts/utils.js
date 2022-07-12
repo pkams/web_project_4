@@ -1,4 +1,4 @@
-import {initialCards, updateCardsList, enableValidation, resetValidation, validateSelectors} from "./index.js";
+import { initialCards, updateCardsList, enableValidation, resetValidation, validateSelectors } from "./index.js";
 
 export const popupViewImage = document.querySelector('.popup_view-image');
 const popup = document.querySelector('.popup');
