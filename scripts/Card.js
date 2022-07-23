@@ -1,5 +1,6 @@
-import { initialCards, updateCardsList } from "./index.js";
-import { popupViewImage } from "./utils.js";
+//import { initialCards, updateCardsList } from "./index_bkp";
+//import { popupViewImage } from "./utils.js";
+import PopupWithImage from "./PopupWithImage.js";
 
 export default class Card{
     constructor(name, link, cardSelector, index) {
@@ -7,6 +8,7 @@ export default class Card{
         this.link = link;
         this._cardSelector = cardSelector;
         this.index = index;
+        this.popupElement = new PopupWithImage('.popup_view-image')
     }
 
     _getTemplate() {
@@ -30,25 +32,23 @@ export default class Card{
     _deleteCardButton(){
         // Delete the i element of the array
         initialCards.splice(this.index, 1);
-        updateCardsList();
+        //updateCardsList();
     }
 
     _openImage(){
-        popupViewImage.classList.toggle('popup_opened');
-        const popupImage = document.querySelector('.popup__image');
-        const popupImageName = document.querySelector('.popup__image-name');
-        popupImage.src = this.link;
-        popupImageName.textContent = this.name;
+        this.popupElement.open(this.name, this.link)
     }
 
     _setEventListener(){
-        const trashButton = this.cardElement.querySelector('.card__trash-button');
-        const likeButton = this.cardElement.querySelector('.card__like-button');
+        this.popupElement.setEventListeners()
+        //const trashButton = this.cardElement.querySelector('.card__trash-button');
+        //const likeButton = this.cardElement.querySelector('.card__like-button');
         const cardButton = this.cardElement.querySelector('.card__image');
-
-        trashButton.addEventListener('click', this._deleteCardButton.bind(this));
-        likeButton.addEventListener('click', this._likeCardButton);
+        const exitButton = this.popupElement.popup.querySelector('.popup__close_view-image')
+        //trashButton.addEventListener('click', this._deleteCardButton.bind(this));
+        //likeButton.addEventListener('click', this._likeCardButton);
         cardButton.addEventListener('click', this._openImage.bind(this));
+        exitButton.addEventListener('click', () => {this.popupElement.close()})
     }
 
     generateCard(){

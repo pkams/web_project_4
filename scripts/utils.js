@@ -1,9 +1,9 @@
-import { initialCards, updateCardsList, enableValidation, resetValidation, validateSelectors } from "./index.js";
+//import { initialCards, updateCardsList, enableValidation, resetValidation, validateSelectors } from "./index_bkp";
 
 export const popupViewImage = document.querySelector('.popup_view-image');
 const popup = document.querySelector('.popup');
 const popupAddCard = document.querySelector('.popup_add-card');
-const backgroundList = document.querySelectorAll(".popup__background");
+export const backgroundList = document.querySelectorAll(".popup__background");
 const editButton = document.querySelector('.profile__edit-button');
 const addButton = document.querySelector('.profile__add-button');
 const closeButton =  popup.querySelector('.popup__close');
