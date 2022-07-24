@@ -1,4 +1,4 @@
-import {backgroundList} from "./constants.js";
+import { backgroundList } from "./index.js";
 
 export default class Popup{
     constructor(popupSelector){
@@ -25,6 +25,8 @@ export default class Popup{
     backgroundList.forEach((background) => {
         background.addEventListener("click", () => {this.close(background.parentElement);});
     });
-    this._handleEscClose()
+    this._handleEscClose();
+    const exitButton = this.popup.querySelector('.popup__close');
+    exitButton.addEventListener('click', () => {this.close()})
     }
 }

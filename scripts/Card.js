@@ -1,6 +1,6 @@
-//import { initialCards, updateCardsList } from "./index_bkp";
-//import { popupViewImage } from "./utils.js";
+import { initialCards } from "./index.js";
 import PopupWithImage from "./PopupWithImage.js";
+import { cardsList } from "./index.js";
 
 export default class Card{
     constructor(name, link, cardSelector, index) {
@@ -32,7 +32,7 @@ export default class Card{
     _deleteCardButton(){
         // Delete the i element of the array
         initialCards.splice(this.index, 1);
-        //updateCardsList();
+        cardsList.renderItems()
     }
 
     _openImage(){
@@ -41,12 +41,12 @@ export default class Card{
 
     _setEventListener(){
         this.popupElement.setEventListeners()
-        //const trashButton = this.cardElement.querySelector('.card__trash-button');
-        //const likeButton = this.cardElement.querySelector('.card__like-button');
+        const trashButton = this.cardElement.querySelector('.card__trash-button');
+        const likeButton = this.cardElement.querySelector('.card__like-button');
         const cardButton = this.cardElement.querySelector('.card__image');
         const exitButton = this.popupElement.popup.querySelector('.popup__close_view-image')
-        //trashButton.addEventListener('click', this._deleteCardButton.bind(this));
-        //likeButton.addEventListener('click', this._likeCardButton);
+        trashButton.addEventListener('click', this._deleteCardButton.bind(this));
+        likeButton.addEventListener('click', this._likeCardButton);
         cardButton.addEventListener('click', this._openImage.bind(this));
         exitButton.addEventListener('click', () => {this.popupElement.close()})
     }
