@@ -1,6 +1,6 @@
-import { initialCards } from "./index.js";
+import { initialCards } from "../index";
 import PopupWithImage from "./PopupWithImage.js";
-import { cardsList } from "./index.js";
+import { cardsList } from "../index";
 
 export default class Card{
     constructor(name, link, cardSelector, index) {

@@ -1,7 +1,9 @@
-import Card from "./Card.js";
-import Section from "./Section.js"
-import PopupWithForm from "./PopupWithForm.js";
-import UserInfo from "./UserInfo.js";
+import "./page/index.css"; //importing css trough webpack
+
+import Card from "./components/Card.js";
+import Section from "./components/Section.js"
+import PopupWithForm from "./components/PopupWithForm.js";
+import UserInfo from "./components/UserInfo.js";
 
 export const initialCards = [
   {

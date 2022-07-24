@@ -1,4 +1,4 @@
-import { backgroundList } from "./index.js";
+import { backgroundList } from "../index";
 
 export default class Popup{
     constructor(popupSelector){
