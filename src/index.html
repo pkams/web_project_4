@@ -15,11 +15,11 @@
          </header>
          <main>
             <section class="profile">
-               <img class="profile__avatar" src="images/perfil.jpg" alt="Foto de avatar de Jacques Cousteau">
+               <img class="profile__avatar" src="<%=require('./images/perfil.jpg')%>" alt="Foto de avatar de Jacques Cousteau">
                <div class="profile__info">
                   <div class="profile__top-content">
                      <h1 class="profile__name">Jacques Cousteau</h1>
-                     <img class="profile__edit-button" src="images/Edit%20Button.svg" alt="Simbolo de edição">
+                     <img class="profile__edit-button" src="<%=require('./images/Edit Button.svg')%>" alt="Simbolo de edição">
                   </div>
                   <p class="profile__job">Explorador</p>
                </div>
@@ -30,7 +30,7 @@
                </div>
                <div class="popup__container">
                   <a class="popup__close">
-                  <img src="images/Close%20Icon.svg" alt="Simbolo de fechar janela.">
+                  <img src="<%=require('./images/Close Icon.svg')%>" alt="Simbolo de fechar janela.">
                   </a>
                   <h2 class="popup__title">Editar perfil</h2>
                   <form class="popup__form">
@@ -49,7 +49,7 @@
                </div>
                <div class="popup__container">
                   <a class="popup__close">
-                  <img src="images/Close%20Icon.svg" alt="Simbolo de fechar janela.">
+                  <img src="<%=require('./images/Close Icon.svg')%>" alt="Simbolo de fechar janela.">
                   </a>
                   <h2 class="popup__title">Novo Local</h2>
                   <form class="popup__form">
@@ -67,9 +67,9 @@
                </div>
                <div class="popup__container-view-image">
                   <a class="popup__close popup__close_view-image">
-                     <img src="images/Close%20Icon.svg" alt="Simbolo de fechar janela.">
+                     <img src="<%=require('./images/Close Icon.svg')%>" alt="Simbolo de fechar janela.">
                   </a>
-                  <img class="popup__image" src="images/1.jpg" alt="Popup image">
+                  <img class="popup__image" src="<%=require('./images/1.jpg')%>" alt="Popup image">
                   <p class="popup__image-name">Local name</p>
                </div>
             </div>
@@ -82,12 +82,12 @@
       </div>
       <template id="card-template">
          <div class="card">
-            <img class="card__image" src="images/1.jpg" alt="Imagem do cartão baseada no link inserido pelo usuário.">
+            <img class="card__image" src="<%=require('./images/1.jpg')%>" alt="Imagem do cartão baseada no link inserido pelo usuário.">
             <div class="card__bottom">
                <p class="card__text-title">Vale de Yosemite</p>
-               <img class="card__like-button" src="images/Like%20Button.svg" alt="Um coração que representa o simbolo de like">
+               <img class="card__like-button" src="<%=require('./images/Like Button.svg')%>" alt="Um coração que representa o simbolo de like">
             </div>
-            <img class="card__trash-button" src="images/Trash.svg">
+            <img class="card__trash-button" src="<%=require('./images/Trash.svg')%>">
          </div>
       </template>
    </body>
