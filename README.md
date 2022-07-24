@@ -23,3 +23,7 @@ Algumas das possíveis modificações futuras incluem:
 - [ ] Persistência do conteudo dinâmicamente usando banco de dados.
 - [ ] Deploy do site interativo em cloud (AWS/Heroku/Etc)
 
+### Rodando projeto
+
+Para rodar o projeto localmente clone o repositório e digite "npm run dev".
+
