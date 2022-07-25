@@ -27,6 +27,6 @@ export default class Popup{
     });
     this._handleEscClose();
     const exitButton = this.popup.querySelector('.popup__close');
-    exitButton.addEventListener('click', () => {this.close()})
+    exitButton.addEventListener('click', () => {this.close();});
     }
 }

@@ -8,7 +8,7 @@ export default class Card{
         this.link = link;
         this._cardSelector = cardSelector;
         this.index = index;
-        this.popupElement = new PopupWithImage('.popup_view-image')
+        this.popupElement = new PopupWithImage('.popup_view-image');
     }
 
     _getTemplate() {
@@ -32,23 +32,23 @@ export default class Card{
     _deleteCardButton(){
         // Delete the i element of the array
         initialCards.splice(this.index, 1);
-        cardsList.renderItems()
+        cardsList.renderItems();
     }
 
     _openImage(){
-        this.popupElement.open(this.name, this.link)
+        this.popupElement.open(this.name, this.link);
     }
 
     _setEventListener(){
-        this.popupElement.setEventListeners()
+        this.popupElement.setEventListeners();
         const trashButton = this.cardElement.querySelector('.card__trash-button');
         const likeButton = this.cardElement.querySelector('.card__like-button');
         const cardButton = this.cardElement.querySelector('.card__image');
-        const exitButton = this.popupElement.popup.querySelector('.popup__close_view-image')
+        const exitButton = this.popupElement.popup.querySelector('.popup__close_view-image');
         trashButton.addEventListener('click', this._deleteCardButton.bind(this));
         likeButton.addEventListener('click', this._likeCardButton);
         cardButton.addEventListener('click', this._openImage.bind(this));
-        exitButton.addEventListener('click', () => {this.popupElement.close()})
+        exitButton.addEventListener('click', () => {this.popupElement.close();});
     }
 
     generateCard(){

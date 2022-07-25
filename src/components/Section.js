@@ -14,7 +14,7 @@ export default class Section{
 
         this._items.slice(0, 6).forEach((item, index) => {
           const element = this._renderer(item, index);
-          this._container.append(element)
+          this._container.append(element);
         });
 
 
