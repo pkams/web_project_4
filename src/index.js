@@ -73,7 +73,6 @@ function openEditionForm(event){
 
 function openAddCardForm(event){
     event.preventDefault();
-    //enableValidation(validateSelectors);
     popupAddCard.open();
 }
 
